@@ -1,0 +1,27 @@
+[
+    {
+        "idAnuncio": "1",
+        "src": "../../../assets/img/Anuncios/01.webp",
+        "desc": "anuncio 1"
+    },
+    {
+        "idAnuncio": "2",
+        "src": "../../../assets/img/Anuncios/02.webp",
+        "desc": "anuncio 2"
+    },
+    {
+        "idAnuncio": "3",
+        "src": "../../../assets/img/Anuncios/03.webp",
+        "desc": "anuncio 3"
+    },
+    {
+        "idAnuncio": "4",
+        "src": "../../../assets/img/Anuncios/04.webp",
+        "desc": "anuncio 4"
+    },
+    {
+        "idAnuncio": "5",
+        "src": "../../../assets/img/Anuncios/05.webp",
+        "desc": "anuncio 5"
+    }
+]

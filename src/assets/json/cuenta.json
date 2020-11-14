@@ -1,0 +1,17 @@
+[
+    {
+        "nombre": "Ricardo",
+        "apellidos": "Garcia Arreola",
+        "correo": "ricardogarcia@gmial.com",
+        "direccion": "Pereyra 317, entre Pasteur y Madero",
+        "descripcionCasa": "Casa Blanca, Puerta Negra",
+        "compras": [
+            {
+                "producto": "pan",
+                "cantidad": 14,
+                "total": 58,
+                "fecha": "14-12-2020"
+            }
+        ]
+    }
+]

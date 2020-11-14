@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-searchbar placeholder="Busca un Producto" (click)="abrirBuscar()"></ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="navegar('carrito')">
+        <ion-icon src="assets/icon/shopping-cart.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-outline"
+      refreshingSpinner="circular">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <app-ofertas></app-ofertas>
+  <app-scroll-cards></app-scroll-cards>
+  <app-categorias></app-categorias>
+</ion-content>

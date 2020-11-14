@@ -1,0 +1,25 @@
+<ion-card>
+  <ion-list>
+
+    <ion-list-header class="ion-text-center">
+      <ion-title>Ofertas</ion-title>
+    </ion-list-header>
+
+    <ion-item (click)="navegar('/productos/producto')" *ngFor="let i of [1,1,1,1,1]">
+      <ion-thumbnail slot="start">
+        <ion-img src="assets/img/ofertas/01.webp"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h4>Realme 8 Pro Dual SIM, 128 GB, 8GB RAM, Azul Rayo</h4>
+        <h2>$6450</h2>
+        <p>Tienda: <span>Ricardo Garcia</span></p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+  
+  <ion-item class="ion-text-center" (click)="navegar('productos')">
+    <ion-label color="primary">Ver Todas Las Ofertas</ion-label>
+  </ion-item>
+
+</ion-card>

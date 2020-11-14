@@ -1,0 +1,51 @@
+
+[
+        {
+            "nombre": "Prodeco",
+            "ubicacion": "Cancun Quintanarro",
+            "productos": [
+                {
+                    "idproducto": 1,
+                    "nombre": "pan",
+                    "precio": 4,
+                    "cantidad": 30
+                },
+                {
+                    "idproducto": 2,
+                    "nombre": "leche",
+                    "precio": 20,
+                    "cantidad": 15
+                },
+                {
+                    "idproducto": 3,
+                    "nombre": "sabritas",
+                    "precio": 20,
+                    "cantidad": 30
+                }
+            ]
+        },
+        {
+            "nombre": "Panificadora Vizcaya",
+            "ubicacion": "Pereyra 512",
+            "productos": [
+                {
+                    "idproducto": 1,
+                    "nombre": "concha",
+                    "precio": 6,
+                    "cantidad": 30
+                },
+                {
+                    "idproducto": 2,
+                    "nombre": "cochinitos",
+                    "precio": 7,
+                    "cantidad": 15
+                },
+                {
+                    "idproducto": 3,
+                    "nombre": "donas",
+                    "precio": 3,
+                    "cantidad": 30
+                }
+            ]
+        }
+]

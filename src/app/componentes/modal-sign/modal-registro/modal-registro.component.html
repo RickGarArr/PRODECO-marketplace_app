@@ -1,0 +1,70 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="cerrarModal()">
+        <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="formulario">
+    <h4>Completa el Siguiente Formulario</h4>
+    <form [formGroup]="formRegistro">
+      <div class="campos"> 
+        <div class="campo">
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input type="text" formControlName="nombre"></ion-input>
+          </ion-item>
+          <small *ngIf="untouched('nombre')">Ingresalo como aparece en tu INE</small>
+          <small *ngIf="invalid('nombre')" class="campo-invalido">Debe contener al menos dos letras</small>
+        </div>
+  
+        <div class="campo">
+          <ion-item>
+            <ion-label position="floating">Apellido</ion-label>
+            <ion-input type="text" formControlName="apellido"></ion-input>
+          </ion-item>
+          <small *ngIf="untouched('apellido')">Ingresalo como aparece en tu INE</small>
+          <small *ngIf="invalid('apellido')" class="campo-invalido">Debe contener al menos dos letras</small>
+        </div>
+  
+        <div class="campo">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <small *ngIf="untouched('email')">Asegurate de tener acceso a este Email</small>
+          <small *ngIf="invalid('email')" class="campo-invalido">Dirección de correo invalida</small>
+        </div>
+  
+        <div class="campo">
+          <ion-item>
+            <ion-label position="floating">CURP</ion-label>
+            <ion-input autocapitalize="on" type="text" formControlName="curp"></ion-input>
+          </ion-item>
+          <small *ngIf="untouched('curp')">¿No conoces tu CURP?
+            <button fill="clear" (click)="abrirNavegador()"><ion-icon slot="icon-only" name="help-circle-outline"></ion-icon></button>
+          </small>
+          <small *ngIf="invalid('curp')" class="campo-invalido">CURP es de 18 caracteres
+            <button fill="clear" (click)="abrirNavegador()"><ion-icon slot="icon-only" name="help-circle-outline"></ion-icon></button>
+          </small>
+        </div>
+  
+        <div class="campo">
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" formControlName="contrasenia"></ion-input>
+          </ion-item>
+          <small *ngIf="untouched('contrasenia')">Genera tu contraseña debe contener entre 6 y 15 letras, te recomendamos no uses tu nombre, apellido o email</small>
+          <small *ngIf="invalid('contrasenia')" class="campo-invalido">Debe contener entre 6 y 15 letras</small>
+        </div>  
+      </div>
+
+      <ion-button [disabled]="formRegistro.invalid" expand="full" (click)="verificarCorreo()">Continuar</ion-button>
+    </form>
+  </div>
+</ion-content>

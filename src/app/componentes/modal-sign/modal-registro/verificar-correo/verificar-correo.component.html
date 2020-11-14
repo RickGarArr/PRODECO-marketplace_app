@@ -1,0 +1,18 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="cerrarModal()">
+        <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h4>Ingresa el Código que Enviamos a tu Correo Electronico</h4>
+  <p>Enviamos el código al email <span>{{ email }}</span> para verficar que tienes acceso a éste</p>
+  <ion-item>
+    <ion-input type="number" class="ion-margin-top"></ion-input>
+  </ion-item>
+  <ion-button expand="full" color="primary" class="ion-margin-top" (click)="crearCuenta()">Continuar</ion-button>
+</ion-content>

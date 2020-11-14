@@ -1,0 +1,18 @@
+<ion-header *ngIf="!inicio" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cerrarModal()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="bienvenida">
+    <h2>¿Aún no tienes cuenta? Registrate Ahora</h2>
+    <ion-button expand="full" (click)="sign('login')">Registrarme Ahora</ion-button>
+    <ion-button fill="clear" expand="full" (click)="sign('sign-up')">Ya tengo una cuenta</ion-button>
+    <ion-button *ngIf="inicio" fill="clear" expand="full" (click)="cerrarModal('omitir')">Omitir</ion-button>
+  </div>
+</ion-content>

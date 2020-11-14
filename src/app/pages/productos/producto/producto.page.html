@@ -1,0 +1,80 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="favorito()" ><ion-icon [name]="icon"></ion-icon></ion-button>
+      <ion-button (click)="navegar('carrito')"><ion-icon src="assets/icon/shopping-cart.svg"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-horizontal">
+  <h2 class="ion-no-margin">Realme 8 Pro Dual SIM, 128 GB, 8GB RAM, Azul Rayo</h2>
+  <p color="success"><small>Nuevo | 251 vendidos</small></p>
+  
+  <ion-slides class="my-ion-slides" pager="true">
+    <ion-slide *ngFor="let i of [1,1,1,1]">
+        <ion-img src="assets/img/ofertas/01.webp"></ion-img>
+    </ion-slide>
+  </ion-slides>
+  <ion-input class="ion-text-center cantidad" placeholder="cantidad / disponibles(25)" type="number"></ion-input>
+  <ion-button color="success" expand="full" (click)="agregarAlCarrito()">Agregar Al Carrito</ion-button>
+  <ion-button color="primary" expand="full" (click)="Comprar()">Comprar</ion-button>
+  <h3 class="ion-text-center">Descripcion</h3>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet veniam cumque cupiditate quasi maiores odio impedit consequuntur nam mollitia ut, est omnis quas. Enim quo quae temporibus aliquid iusto rem.</p>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet veniam cumque cupiditate quasi maiores odio impedit consequuntur nam mollitia ut, est omnis quas. Enim quo quae temporibus aliquid iusto rem.</p>
+
+  <h3 class="ion-text-center">Caracteristicas Principales</h3>
+  <table class="principales ion-margin-top">
+    <tr>
+      <th>Marca</th>
+      <td>John Doe</td>
+    </tr>
+    <tr>
+      <th>Modelo</th>  
+      <td>6 Pro</td>      
+    </tr>
+    <tr>
+      <th>Linea</th>
+      <td>HDHC72</td>
+    </tr>
+    <tr>
+      <th>Color</th>
+      <td>Morado</td>
+    </tr>
+  </table>
+  <h3 class="ion-text-center">Otras Caracteristicas</h3>
+  <table class="principales ion-margin-top">
+    <tr>
+      <th>Tamaño</th>
+      <td>5 pulgadas</td>
+    </tr>
+    <tr>
+      <th>Procesador</th>  
+      <td>Snapdragon 720G</td>      
+    </tr>
+    <tr>
+      <th>Batería</th>
+      <td>5020 mAh</td>
+    </tr>
+    <tr>
+      <th>Memoria Interna</th>
+      <td>128GB</td>
+    </tr>
+    <tr>
+      <th>Memoria Ram</th>
+      <td>8GB</td>
+    </tr>
+    <tr>
+      <th>Camara</th>
+      <td>24MP</td>
+    </tr>
+    <tr>
+      <th>Camara Frontal</th>
+      <td>8MP</td>
+    </tr>
+  </table>
+</ion-content>

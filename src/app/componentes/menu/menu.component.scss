@@ -1,0 +1,17 @@
+.side-menu {
+    --width: 80%;
+}
+
+.arriba {
+    padding: 1rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+ion-content ion-item ion-icon {
+    margin-right: 2rem;
+}
+
+ion-content ion-item ion-label {
+    font-weight: 700;
+}

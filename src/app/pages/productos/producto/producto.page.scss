@@ -1,0 +1,28 @@
+.my-ion-slides {
+    height: 35vh;
+    --bullet-background: var(--ion-color-medium);
+}
+
+.principales {
+    width: 100%;
+}
+
+.principales th, td {
+    padding: 1rem;
+}
+
+.principales th {
+    background-color: var(--ion-color-dark);
+    color: var(--ion-color-light);
+}
+
+.principales td {
+    background-color: var(--ion-color-light);
+    color: var(--ion-color-dark);
+}
+
+ion-input.cantidad {
+    font-weight: 700;
+    font-size: large;
+    --placeholder-font-weight: 500;
+}

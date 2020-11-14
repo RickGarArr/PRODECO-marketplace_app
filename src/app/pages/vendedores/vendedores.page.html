@@ -1,0 +1,12 @@
+<app-header titulo="vendedores"></app-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let tienda of tiendas">
+            <ion-label>
+                <h2>{{ tienda.nombre }}</h2>
+                <p>{{ tienda.ubicacion }}</p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

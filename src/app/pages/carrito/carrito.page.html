@@ -1,0 +1,42 @@
+<app-header titulo="Mi Carrito"></app-header>
+<ion-content>
+    <div *ngIf="!productos" class="sin-productos">
+        <div class="leyenda">
+            <h2>Aún no has agregado algún producto</h2>
+            <p >Empieza a realizar compras</p>
+        </div>
+    </div>
+    <div *ngIf="productos" class="con-productos">
+        <ion-list>
+            <ion-item *ngFor="let i of [1,1]">
+                <ion-thumbnail slot="start">
+                    <ion-img src="assets/img/ofertas/01.webp"></ion-img>
+                </ion-thumbnail>
+                <ion-label>
+                    <h4>Realme 8 Pro Dual SIM, 128 GB, 8GB RAM, Azul Rayo</h4>
+                    <h2>$6450</h2>
+                    <p>Vendedor: <span>Ricardo G</span></p>
+                </ion-label>
+                <div class="opciones">
+                    <ion-buttons>
+                        <ion-button (click)="popOpciones($event)">
+                            <ion-icon slot="icon-only" color="medium" name="ellipsis-vertical"></ion-icon>
+                        </ion-button>
+                    </ion-buttons>
+                </div>
+            </ion-item>
+        </ion-list>
+    </div>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="productos = !productos">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>
+<ion-footer *ngIf="productos" class="ion-padding">
+    <ion-toolbar>
+        <ion-label slot="start">Productos: <span>2</span></ion-label>
+        <ion-label slot="end">Total: <span>$ 8000</span></ion-label>
+    </ion-toolbar>
+    <ion-button expand="full" color="primary" (click)="comprar()">Comprar Ahora</ion-button>
+</ion-footer>

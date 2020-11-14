@@ -1,0 +1,40 @@
+<app-cuenta-header titulo="Mis Compras"></app-cuenta-header>
+
+<ion-content>
+    <div *ngIf="noDatos" class="sin-ventas">
+        <h4>Aún no has realizado ninguna compra</h4>
+        <p>¿Qué esperas para empezar a adquirir tus productos?</p>
+        <ion-button expand="full" fill="clear" (click)="navegar()">Comenzar</ion-button>
+    </div>
+
+    <div *ngIf="!noDatos" class="con-ventas">
+        <ion-item>
+            <ion-thumbnail slot="start">
+                <ion-img src="assets/img/productos/01.jpeg"></ion-img>
+            </ion-thumbnail>
+            <ion-label>
+                <h2>Producto: Tenis Vans</h2>
+                <p>Fecha: 24-10-2020 14:35 hrs</p>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-thumbnail slot="start">
+                <ion-img src="assets/img/productos/02.jpeg"></ion-img>
+            </ion-thumbnail>
+            <ion-label>
+                <h2>Producto: Tenis Vans</h2>
+                <p>Fecha: 24-10-2020 14:35 hrs</p>
+            </ion-label>
+        </ion-item>
+    </div>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-button (click)="switch()">Datos</ion-button>
+        </ion-buttons>
+        <ion-title *ngIf="noDatos">No hay Datos</ion-title>
+        <ion-title *ngIf="!noDatos">Si Hay Datos</ion-title>
+    </ion-toolbar>
+</ion-footer>

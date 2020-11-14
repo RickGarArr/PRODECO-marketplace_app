@@ -1,0 +1,49 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cerrarModal()">
+        <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Método de entrega</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="noDatos" class="sin-direcciones">
+    <h4>Aún no has registrado ningúna dirección</h4>
+    <p>Registra uuna dirección para recibir tus productos a casa</p>
+    <ion-button expand="full" fill="clear" (click)="modalDireccion('crear')">Registrar</ion-button>
+  </div>
+
+  <div *ngIf="!noDatos" class="con-direcciones">
+    <ion-item>
+      <ion-label>
+        <h2>Calle: Pereyra 317</h2>
+        <p>Entre: Fco. I Madero y Pasteur, Zona Centro, 34000</p>
+        <p>Contacto: Ricardo Garcia - 6778790329</p>
+      </ion-label>
+    </ion-item>
+    <ion-button expand="full" fill="clear" (click)="seleccionarDireccion()">Seleccionar Otra dirección</ion-button>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="noDatos = !noDatos">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<ion-footer>
+  <ion-item detail *ngIf="!noDatos">
+    <ion-icon name="home" slot="start"></ion-icon>
+    <ion-label>
+      Entrega a Domicilio
+    </ion-label>
+  </ion-item>
+  <ion-item detail>
+    <ion-icon name="storefront" slot="start"></ion-icon>
+    <ion-label>
+      Retirar en Sucursal
+    </ion-label>
+  </ion-item>
+</ion-footer>

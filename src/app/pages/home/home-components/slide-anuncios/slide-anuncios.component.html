@@ -1,0 +1,9 @@
+<ion-slides>
+  <ion-slide *ngFor="let anuncio of anuncios">
+    <ion-card (click)="verPaginaAnuncio(anuncio.idAnuncio)">
+      <div class="img-slide">
+        <img [src]="anuncio.src" alt="asdas">
+      </div>
+    </ion-card>
+  </ion-slide>
+</ion-slides>

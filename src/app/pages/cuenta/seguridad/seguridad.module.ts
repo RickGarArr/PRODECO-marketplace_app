@@ -1,0 +1,22 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { IonicModule } from '@ionic/angular';
+
+import { SeguridadPageRoutingModule } from './seguridad-routing.module';
+
+import { SeguridadPage } from './seguridad.page';
+import { CuentaComponentesModule } from '../componentes/cuenta-componentes.module';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    SeguridadPageRoutingModule,
+    CuentaComponentesModule
+  ],
+  declarations: [SeguridadPage]
+})
+export class SeguridadPageModule {}
