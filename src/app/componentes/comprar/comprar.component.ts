@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+
 import { DireccionComponent } from 'src/app/pages/cuenta/direcciones/direccion/direccion.component';
+import { DireccionesService } from 'src/app/services/direcciones.service';
 import { DireccionesComponent } from './direcciones/direcciones.component';
+import { ResumenComponent } from './resumen/resumen.component';
 
 @Component({
   selector: 'app-comprar',
@@ -10,11 +13,11 @@ import { DireccionesComponent } from './direcciones/direcciones.component';
 })
 export class ComprarComponent implements OnInit {
 
-  noDatos: true;
-
   constructor(
-    private alertCtrl: AlertController,
-    private modalCtrl: ModalController) { }
+    private direccionesService: DireccionesService,
+    private modalCtrl: ModalController) {
+      console.log(direccionesService.direcciones);
+    }
 
   ngOnInit() {}
 
@@ -25,9 +28,11 @@ export class ComprarComponent implements OnInit {
   async seleccionarDireccion() {
     const direcciones = await this.modalCtrl.create({
       id: 'direcciones',
-      component: DireccionesComponent
+      component: DireccionesComponent,
+      componentProps: {
+        direcciones: this.direccionesService.direcciones
+      }
     });
-
     await direcciones.present();
   }
 
@@ -38,4 +43,13 @@ export class ComprarComponent implements OnInit {
     });
     await agregar.present();
   }
+
+  async modalResumen( id: string ) {
+    const resumen = await this.modalCtrl.create({
+      component: ResumenComponent,
+      id
+    });
+  resumen.present();
+  }
+
 }

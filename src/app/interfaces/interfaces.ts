@@ -24,6 +24,7 @@ export interface Producto {
 export interface Direccion {
     contacto: Contacto;
     domicilio: Domicilio;
+    principal: boolean;
 }
 
 interface Contacto {

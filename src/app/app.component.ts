@@ -5,7 +5,9 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { ModalSignComponent } from './componentes/modal-sign/modal-sign.component';
 import { DataLocalService } from './services/data-local.service';
-import { async } from '@angular/core/testing';
+
+import { Storage } from '@ionic/storage';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -19,12 +21,14 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private modalCtrl: ModalController,
-    private dlService: DataLocalService
+    private dlService: DataLocalService,
+    public authService: AuthService
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
+    console.log(this.authService.registrado);
     this.splashScreen.show();
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();

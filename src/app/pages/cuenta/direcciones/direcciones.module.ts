@@ -19,6 +19,9 @@ import { DireccionComponent } from './direccion/direccion.component';
     DireccionesPageRoutingModule,
     CuentaComponentesModule
   ],
-  declarations: [DireccionesPage, DireccionComponent]
+  declarations: [
+    DireccionesPage,
+    DireccionComponent
+  ]
 })
 export class DireccionesPageModule {}

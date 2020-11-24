@@ -11,7 +11,7 @@ export class DataLocalService {
   async guardarOmitirModalSign() {
     await this.storage.set('omitir', true);
   }
-
+  
   async omitirModalSign() {
     return await this.storage.get('omitir');
   }

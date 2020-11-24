@@ -35,8 +35,8 @@ export class ModalRegistroComponent implements OnInit{
     });
     verificarCorreo.present();
 
-    await verificarCorreo.onDidDismiss().then( data => {
-      if (data.role === 'salir'){
+    await verificarCorreo.onDidDismiss().then(data => {
+      if (data.role === 'salir') {
         this.modalCtrl.dismiss(null, 'salir', 'registrar');
       }
     });
@@ -62,8 +62,8 @@ export class ModalRegistroComponent implements OnInit{
       nombre: new FormControl('', [Validators.required, Validators.maxLength(25), Validators.minLength(2)]),
       apellido: new FormControl('', [Validators.required, Validators.maxLength(25), Validators.minLength(2)]),
       email: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]),
-      curp: new FormControl('', [Validators.required]),
-      contrasenia: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)])
+      password1: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
+      // password2: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)])
     });
   }
 

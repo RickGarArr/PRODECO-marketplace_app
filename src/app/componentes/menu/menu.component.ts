@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NavController, MenuController, ModalController } from '@ionic/angular';
 import { ModalBuscarComponent } from '../modal-buscar/modal-buscar.component';
 import { ModalSignComponent } from '../modal-sign/modal-sign.component';
@@ -10,13 +10,18 @@ import { ModalSignComponent } from '../modal-sign/modal-sign.component';
 })
 export class MenuComponent implements OnInit {
 
+  @Input() registrado;
+
   constructor(
     private navCtrl: NavController,
     private menuCtrl: MenuController,
-    private modalCtrl: ModalController
-    ) { }
+    private modalCtrl: ModalController,
+    ) {
+      console.log(this.registrado);
+    }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   navegar(pagina: string) {
     if (pagina === 'productos') {

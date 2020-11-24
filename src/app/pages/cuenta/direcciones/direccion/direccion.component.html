@@ -6,24 +6,17 @@
         <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    
-    <ion-buttons *ngIf="(data !== undefined)" slot="end">
-      <ion-button (click)="editarDireccion()">
-        <ion-label *ngIf="direccion.disabled">Editar</ion-label>
-        <ion-label *ngIf="direccion.enabled">Cancelar</ion-label>
-      </ion-button>
-      <ion-button (click)="editarDireccion('guardar')" *ngIf="direccion.enabled">
-        <ion-label>Guardar</ion-label>
+    <ion-buttons *ngIf="direccion !== null" slot="end">
+      <ion-button (click)="mostrarOpciones($event)">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
       </ion-button>
     </ion-buttons>
-
     <ion-title>Registrar Dirección</ion-title>
-
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="direccion">
+  <form [formGroup]="direccionForm">
     <div class="direccion" formGroupName="contacto">
       <ion-item class="small" color="light">
         <small>Contacto</small>
@@ -99,6 +92,6 @@
       </ion-item>
       
     </div>
-    <ion-button *ngIf="data === undefined" expand="full" type="button" (click)="guardarDireccion()">Guardar</ion-button>
+    <ion-button [disabled]="direccionForm.disabled || direccionForm.invalid" expand="full" type="button" (click)="guardarDireccion()">Guardar</ion-button>
   </form>
 </ion-content>

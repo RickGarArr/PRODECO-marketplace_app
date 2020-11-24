@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { ModalController, LoadingController } from '@ionic/angular';
-import { DataLocalService } from '../../../../services/data-local.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-verificar-correo',
@@ -13,7 +13,7 @@ export class VerificarCorreoComponent implements OnInit {
   @Input() usuario: object;
 
   constructor(
-    private dlService: DataLocalService,
+    private authService: AuthService,
     private loadingCtrl: LoadingController,
     private modalCtrl: ModalController) { }
 
@@ -26,10 +26,9 @@ export class VerificarCorreoComponent implements OnInit {
   }
 
   crearCuenta() {
-    console.log(this.usuario);
+    this.authService.signUp(this.usuario);
     this.presentLoading();
     this.modalCtrl.dismiss(null, 'salir', 'verificar');
-    this.dlService.guardarOmitirModalSign();
   }
 
   async presentLoading() {

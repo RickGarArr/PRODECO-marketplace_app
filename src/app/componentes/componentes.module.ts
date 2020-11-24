@@ -11,6 +11,8 @@ import { VerificarCorreoComponent } from './modal-sign/modal-registro/verificar-
 import { ModalLoginComponent } from './modal-sign/modal-login/modal-login.component';
 import { HeaderComponent } from './header/header.component';
 import { ComprarComponent } from './comprar/comprar.component';
+import { DireccionesComponent } from './comprar/direcciones/direcciones.component';
+
 
 @NgModule({
   declarations: [
@@ -21,12 +23,13 @@ import { ComprarComponent } from './comprar/comprar.component';
     ModalRegistroComponent,
     VerificarCorreoComponent,
     HeaderComponent,
-    ComprarComponent
+    ComprarComponent,
+    DireccionesComponent
   ],
   imports: [
     CommonModule,
     IonicModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     MenuComponent,

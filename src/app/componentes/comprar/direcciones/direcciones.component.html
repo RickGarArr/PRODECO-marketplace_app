@@ -11,26 +11,19 @@
 <ion-content>
   <ion-list>
     <ion-radio-group value="biff">
-      <ion-item>
+      <ion-item *ngFor="let direccion of direccionesService.direcciones">
         <ion-label>
-            <h2>Calle: Pereyra 317</h2>
-            <p>Entre: Fco. I Madero y Pasteur, Zona Centro, 34000</p>
-            <p>Contacto: Ricardo Garcia - 6778790329</p>
-        </ion-label>
-        <ion-radio slot="end"></ion-radio>
-    </ion-item>
-    <ion-item>
-        <ion-label>
-            <h2>Calle: Vicente Guerrero 16</h2>
-            <p>Entre: Paloma y Victoria, Emiliano Zapata, 34241</p>
-            <p>Contacto: Gerardo Rogriguez - 6182431454</p>
+            <h2>Calle: {{direccion.domicilio.calle}} {{direccion.domicilio.numExt}}</h2>
+            <p>Entre: {{direccion.domicilio.entreCalle1}} y {{direccion.domicilio.entreCalle1}}, 
+              {{direccion.domicilio.colonia}}, {{direccion.domicilio.cp}}</p>
+            <p>Contacto: {{direccion.contacto.nombre}} {{direccion.contacto.apellido}} - {{direccion.contacto.telefono}}</p>
         </ion-label>
         <ion-radio slot="end"></ion-radio>
     </ion-item>
     </ion-radio-group>
   </ion-list>
-  <ion-button expand="full" fill="clear">Agregar Otra Direccion</ion-button>
+  <ion-button (click)="crearDireccion()" expand="full" fill="clear">Agregar Otra Direccion</ion-button>
 </ion-content>
 <ion-footer>
-  <ion-button color="primary" expand="full" class="ion-margin">Guardar</ion-button>
+  <ion-button (click)="seleccionarDireccion()" color="primary" expand="full" class="ion-margin">Guardar</ion-button>
 </ion-footer>

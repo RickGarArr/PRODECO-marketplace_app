@@ -43,25 +43,21 @@
   
         <div class="campo">
           <ion-item>
-            <ion-label position="floating">CURP</ion-label>
-            <ion-input autocapitalize="on" type="text" formControlName="curp"></ion-input>
-          </ion-item>
-          <small *ngIf="untouched('curp')">¿No conoces tu CURP?
-            <button fill="clear" (click)="abrirNavegador()"><ion-icon slot="icon-only" name="help-circle-outline"></ion-icon></button>
-          </small>
-          <small *ngIf="invalid('curp')" class="campo-invalido">CURP es de 18 caracteres
-            <button fill="clear" (click)="abrirNavegador()"><ion-icon slot="icon-only" name="help-circle-outline"></ion-icon></button>
-          </small>
-        </div>
-  
-        <div class="campo">
-          <ion-item>
             <ion-label position="floating">Contraseña</ion-label>
-            <ion-input type="password" formControlName="contrasenia"></ion-input>
+            <ion-input type="password" formControlName="password1"></ion-input>
           </ion-item>
-          <small *ngIf="untouched('contrasenia')">Genera tu contraseña debe contener entre 6 y 15 letras, te recomendamos no uses tu nombre, apellido o email</small>
-          <small *ngIf="invalid('contrasenia')" class="campo-invalido">Debe contener entre 6 y 15 letras</small>
-        </div>  
+          <small *ngIf="untouched('password1')">Genera tu contraseña debe contener entre 6 y 15 letras, te recomendamos no uses tu nombre, apellido o email</small>
+          <small *ngIf="invalid('password1')" class="campo-invalido">Debe contener entre 6 y 15 letras</small>
+        </div>
+        
+        <!-- <div class="campo">
+          <ion-item>
+            <ion-label position="floating">Repita Contraseña</ion-label>
+            <ion-input type="password" formControlName="password2"></ion-input>
+          </ion-item>
+          <small *ngIf="untouched('password2')">Verifica el password</small>
+          <small *ngIf="invalid('password2')" class="campo-invalido">las constraseñas no coinciden</small>
+        </div> -->
       </div>
 
       <ion-button [disabled]="formRegistro.invalid" expand="full" (click)="verificarCorreo()">Continuar</ion-button>

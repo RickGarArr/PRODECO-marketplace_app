@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController, ModalController, NavController } from '@ionic/angular';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { DataLocalService } from '../../../services/data-local.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-modal-login',
@@ -10,10 +10,10 @@ import { DataLocalService } from '../../../services/data-local.service';
 })
 export class ModalLoginComponent implements OnInit {
 
-  usuario: FormGroup;
+  usuarioLogin: FormGroup;
 
   constructor(
-    private dlService: DataLocalService,
+    private authService: AuthService,
     private formBuilder: FormBuilder,
     private navCtrl: NavController,
     private modalCtrl: ModalController,
@@ -28,16 +28,14 @@ export class ModalLoginComponent implements OnInit {
     this.modalCtrl.dismiss(null, null, 'entrar');
   }
 
-  async registrar() {
-    console.log(this.usuario.value);
-    this.presentLoading();
+  async login() {
     this.modalCtrl.dismiss(null, 'salir', 'entrar');
     this.navCtrl.navigateForward('home');
-    this.dlService.guardarOmitirModalSign();
+    this.authService.logIn(this.usuarioLogin.value);
   }
 
   crearFormulario() {
-    this.usuario = this.formBuilder.group({
+    this.usuarioLogin = this.formBuilder.group({
       email: new FormControl('', [Validators.required]),
       contrasenia: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)])
     });
