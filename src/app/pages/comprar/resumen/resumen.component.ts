@@ -4,6 +4,7 @@ import { AlertController, ModalController, PopoverController } from '@ionic/angu
 import { PopOverComponent } from 'src/app/componentes/pop-over/pop-over.component';
 import { Direccion , Contacto, Domicilio} from 'src/app/interfaces/interfaces';
 import { AuthService } from 'src/app/services/auth.service';
+import { MetodoPagoComponent } from '../metodo-pago/metodo-pago.component';
 
 @Component({
   selector: 'app-resumen',
@@ -139,8 +140,13 @@ export class ResumenComponent implements OnInit {
     });
   }
 
-  comprar() {
-    this.modalCtrl.dismiss();
-    this.router.navigateByUrl('/home');
+  async comprar() {
+    const pago =  await this.modalCtrl.create( {
+      component: MetodoPagoComponent,
+      id: 'metodo-pago',
+      componentProps: {}
+    });
+    pago.present();
+    
   }
 }

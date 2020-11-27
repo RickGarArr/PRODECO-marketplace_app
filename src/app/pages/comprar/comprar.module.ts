@@ -8,6 +8,7 @@ import { ComprarPageRoutingModule } from './comprar-routing.module';
 import { ComprarPage } from './comprar.page';
 import { ComponentesModule } from 'src/app/componentes/componentes.module';
 import { ResumenComponent } from './resumen/resumen.component';
+import { MetodoPagoComponent } from './metodo-pago/metodo-pago.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { ResumenComponent } from './resumen/resumen.component';
   ],
   declarations: [
     ComprarPage,
-    ResumenComponent
+    ResumenComponent,
+    MetodoPagoComponent
   ]
 })
 export class ComprarPageModule {}

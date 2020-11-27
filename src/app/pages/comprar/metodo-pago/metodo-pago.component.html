@@ -1,0 +1,56 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cerrarModal()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Metodo De Pago</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-radio-group [(ngModel)]= metodo>
+
+    
+    <ion-item>
+      <ion-label>
+      <h2> Efectivo </h2>
+      <p> Pago en efectivo </p>
+      </ion-label>
+      <ion-radio value="efectivo" slot="end" > </ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+      <h2> Tarjeta </h2>
+      <p> Pago con Tarjeta debito o credito</p>
+      </ion-label>
+      <ion-radio value="tarjeta" slot="end" > </ion-radio>
+    </ion-item>
+
+  </ion-radio-group>
+  </ion-list>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label  position= "floating" > Nombre de la tarjeta</ion-label>
+        
+        <ion-input type="text" ></ion-input>
+      </ion-item>
+
+      
+      <ion-item>
+        <ion-label  position= "floating" > Numero de la tarjeta</ion-label>
+        
+        <ion-input type="text" ></ion-input>
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
