@@ -1,22 +1,38 @@
-<app-header titulo="Mensajeria"></app-header>
+<app-header titulo="Chat">
+  
+</app-header>
 
 <ion-content>
-<ion-grid>
-  
-  <ion-text color="medium" class="ion-text-center">
-  <p>Usuario</p>
+  <ion-text color="primary"  class="margin" class="ion-text-center">
+    <h1> chat: Gerardo rodriguez</h1>
   </ion-text>
-  <ion-row>
+ <ion-list>
+   <ion-item (click)="navcuenta()" >
+     <ion-button class="item-avatar">
+       <ion-avatar slot="start">
+         <img src="/assets/perfil.jpg">
+       </ion-avatar>
+     </ion-button>
+     <ion-text color="dark" class="ion-text-center">
+      <h2>hola que precio tienen las guitarras</h2>
+    </ion-text>
+   </ion-item>
 
-    <ion-col size="9">
-      <b>Usuario mensaje</b><br>
-      <span>usuario respuesta</span>
-      <div class="time" class="ion-text-right"> <br> </div>
-    </ion-col>
+   <ion-item class="margin">
+    <ion-button class="item-avatar" slot="end">
+      <ion-avatar >
+        <img src="/assets/ricardo.jpg">
+      </ion-avatar>
+    </ion-button>
+    <ion-text color="dark" class="ion-text-center">
+      <h2>Ya no hay compa </h2>
+    </ion-text>
+  </ion-item>
 
-  </ion-row>
+ </ion-list>
+  
 
-</ion-grid>
+  
 
 </ion-content>
 <ion-footer>
