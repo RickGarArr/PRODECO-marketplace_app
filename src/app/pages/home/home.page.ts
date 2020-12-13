@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceService } from '../../services/service.service';
 import { ModalController, NavController } from '@ionic/angular';
 import { ModalBuscarComponent } from '../../componentes/modal-buscar/modal-buscar.component';
 
@@ -19,7 +18,6 @@ export class HomePage  implements OnInit {
 
   constructor(
     private navCtrl: NavController,
-    private dataService: ServiceService,
     private modalCtrl: ModalController,
     ) {}
 

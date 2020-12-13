@@ -6,7 +6,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { ModalSignComponent } from './componentes/modal-sign/modal-sign.component';
 import { DataLocalService } from './services/data-local.service';
 
-import { Storage } from '@ionic/storage';
 import { AuthService } from './services/auth.service';
 
 @Component({
@@ -28,7 +27,6 @@ export class AppComponent {
   }
 
   initializeApp() {
-    console.log(this.authService.registrado);
     this.splashScreen.show();
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();

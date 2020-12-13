@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { ModalController, LoadingController } from '@ionic/angular';
+import { RegisterForm } from 'src/app/interfaces/interfaces';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class VerificarCorreoComponent implements OnInit {
 
   @Input() email: string;
-  @Input() usuario: object;
+  @Input() usuario: RegisterForm;
 
   constructor(
     private authService: AuthService,
@@ -26,9 +27,9 @@ export class VerificarCorreoComponent implements OnInit {
   }
 
   crearCuenta() {
-    this.authService.signUp(this.usuario);
-    this.presentLoading();
-    this.modalCtrl.dismiss(null, 'salir', 'verificar');
+    this.authService.signIn(this.usuario);  
+    // this.presentLoading();
+    // this.modalCtrl.dismiss(null, 'salir', 'verificar');
   }
 
   async presentLoading() {

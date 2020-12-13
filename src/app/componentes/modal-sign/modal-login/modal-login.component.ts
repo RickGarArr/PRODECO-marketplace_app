@@ -8,9 +8,9 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './modal-login.component.html',
   styleUrls: ['./modal-login.component.scss'],
 })
-export class ModalLoginComponent implements OnInit {
+export class ModalLoginComponent {
 
-  usuarioLogin: FormGroup;
+  loginForm: FormGroup;
 
   constructor(
     private authService: AuthService,
@@ -18,27 +18,18 @@ export class ModalLoginComponent implements OnInit {
     private navCtrl: NavController,
     private modalCtrl: ModalController,
     private loadingCtrl: LoadingController) {
-      this.crearFormulario();
-  }
-
-  // id: entrar
-  ngOnInit() {}
-
-  cerrarModal() {
-    this.modalCtrl.dismiss(null, null, 'entrar');
-  }
-
+      this.loginForm = this.formBuilder.group({
+        email: new FormControl('', [Validators.required, Validators.email]),
+        password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)])
+      });
+    }
+  
   async login() {
-    this.modalCtrl.dismiss(null, 'salir', 'entrar');
-    this.navCtrl.navigateForward('home');
-    this.authService.logIn(this.usuarioLogin.value);
-  }
-
-  crearFormulario() {
-    this.usuarioLogin = this.formBuilder.group({
-      email: new FormControl('', [Validators.required]),
-      contrasenia: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)])
-    });
+    this.authService.login(this.loginForm.value);    
+    console.log(this.loginForm.value);
+    
+    // this.modalCtrl.dismiss(null, 'salir', 'entrar');
+    // this.navCtrl.navigateForward('home');
   }
 
   async presentLoading() {
@@ -47,5 +38,9 @@ export class ModalLoginComponent implements OnInit {
       duration: 1500
     });
     await loading.present();
+  }
+
+  cerrarModal() {
+    this.modalCtrl.dismiss(null, null, 'entrar');
   }
 }

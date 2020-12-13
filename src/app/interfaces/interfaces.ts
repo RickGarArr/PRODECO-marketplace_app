@@ -43,3 +43,15 @@ export interface Domicilio {
     numExt: string;
     numInt: string;
 }
+// --------------------------------------------------------------------------------
+export interface RegisterForm {
+    nombre: string;
+    apellidoPat: string;
+    email: string;
+    telefono: string;
+    password: string;
+}
+export interface LoginForm {
+    email: string;
+    password: string
+}

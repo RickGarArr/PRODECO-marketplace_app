@@ -1,39 +1,33 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { environment } from 'src/environments/environment';
+import { LoginForm, RegisterForm } from '../interfaces/interfaces';
+import { tap } from 'rxjs/operators';
+
+const base_url = environment.base_url;
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
 
-    public registrado;
-    
-    constructor(
-        private storage: Storage ) {
-        this.verificarUsuario();
+    constructor( private http: HttpClient, private storage: Storage ) {}
+
+    signIn( formData: RegisterForm ){
+        this.http.post(`${base_url}/consumidores/register`, formData).subscribe( (resp: any) => {
+            this.storage.set('token', resp.token);
+        }, err => {
+            console.log(err);
+            
+        });
     }
 
-    async logIn(user) {
-        console.log(user);
-        const usuario = await this.storage.get('usuario');
-        if (usuario.email !== user.email) {
-            return 'El email es incorrecto'
-        }
-        if (usuario.password1 !== user.password) {
-            return 'El Password es incorrecto'
-        }
-
-    }
-    async signUp(user) {
-        console.log(user);
-        await this.storage.set('usuario', user);
-        return true;
-    }
-
-    async verificarUsuario() {
-        const usuario = await this.storage.get('usuario');
-        if (usuario) {
-            this.registrado = usuario;
-        }
+    login( formData: LoginForm) {
+        this.http.post(`${base_url}/auth/consumidor/login`, formData).subscribe( (resp: any) => {
+            this.storage.set('token', resp.token);
+        }, errors => {
+            console.log(errors);
+        });
     }
 }

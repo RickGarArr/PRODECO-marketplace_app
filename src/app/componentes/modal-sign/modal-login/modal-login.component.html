@@ -10,7 +10,7 @@
 
 <ion-content class="ion-padding">
   <p class="ion-margin-bottom">Para poder continuar por favor ingresa tu email y contraseña</p>
-  <form [formGroup]="usuarioLogin">
+  <form [formGroup]="loginForm">
     <ion-item class="ion-margin-top">
       <ion-label position="floating">Email</ion-label>
       <ion-input type="text" formControlName="email"></ion-input>
@@ -18,9 +18,9 @@
   
     <ion-item class="ion-margin-top">
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" formControlName="contrasenia"></ion-input>
+      <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
   
-    <ion-button [disabled]="usuarioLogin.invalid" expand="full" (click)="login()">Ingresar</ion-button>
+    <ion-button [disabled]="loginForm.invalid" expand="full" (click)="login()">Ingresar</ion-button>
   </form>
 </ion-content>

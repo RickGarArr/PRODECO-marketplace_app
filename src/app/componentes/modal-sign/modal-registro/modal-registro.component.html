@@ -12,7 +12,7 @@
 <ion-content>
   <div class="formulario">
     <h4>Completa el Siguiente Formulario</h4>
-    <form [formGroup]="formRegistro">
+    <form [formGroup]="registerForm">
       <div class="campos"> 
         <div class="campo">
           <ion-item>
@@ -26,10 +26,10 @@
         <div class="campo">
           <ion-item>
             <ion-label position="floating">Apellido</ion-label>
-            <ion-input type="text" formControlName="apellido"></ion-input>
+            <ion-input type="text" formControlName="apellidoPat"></ion-input>
           </ion-item>
-          <small *ngIf="untouched('apellido')">Ingresalo como aparece en tu INE</small>
-          <small *ngIf="invalid('apellido')" class="campo-invalido">Debe contener al menos dos letras</small>
+          <small *ngIf="untouched('apellidoPat')">Ingresalo como aparece en tu INE</small>
+          <small *ngIf="invalid('apellidoPat')" class="campo-invalido">Debe contener al menos dos letras</small>
         </div>
   
         <div class="campo">
@@ -40,27 +40,36 @@
           <small *ngIf="untouched('email')">Asegurate de tener acceso a este Email</small>
           <small *ngIf="invalid('email')" class="campo-invalido">Dirección de correo invalida</small>
         </div>
+
+        <div class="campo">
+          <ion-item>
+            <ion-label position="floating">Telefono</ion-label>
+            <ion-input type="text" formControlName="telefono"></ion-input>
+          </ion-item>
+          <small *ngIf="untouched('telefono')">Asegurate de tener acceso a este Email</small>
+          <small *ngIf="invalid('telefono')" class="campo-invalido">Dirección de correo invalida</small>
+        </div>
   
         <div class="campo">
           <ion-item>
             <ion-label position="floating">Contraseña</ion-label>
-            <ion-input type="password" formControlName="password1"></ion-input>
-          </ion-item>
-          <small *ngIf="untouched('password1')">Genera tu contraseña debe contener entre 6 y 15 letras, te recomendamos no uses tu nombre, apellido o email</small>
-          <small *ngIf="invalid('password1')" class="campo-invalido">Debe contener entre 6 y 15 letras</small>
-        </div>
-        
-        <!-- <div class="campo">
-          <ion-item>
-            <ion-label position="floating">Repita Contraseña</ion-label>
             <ion-input type="password" formControlName="password2"></ion-input>
           </ion-item>
-          <small *ngIf="untouched('password2')">Verifica el password</small>
-          <small *ngIf="invalid('password2')" class="campo-invalido">las constraseñas no coinciden</small>
-        </div> -->
+          <small *ngIf="untouched('password2')">Genera tu contraseña debe contener entre 6 y 15 letras, te recomendamos no uses tu nombre, apellido o email</small>
+          <small *ngIf="invalid('password2')" class="campo-invalido">Debe contener entre 6 y 15 letras</small>
+        </div>
+        
+        <div class="campo">
+          <ion-item>
+            <ion-label position="floating">Verificar Contraseña</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <small *ngIf="untouched('password')">Verifica el password</small>
+          <small *ngIf="invalid('password') && passwordsDiferentes()" class="campo-invalido">las constraseñas no coinciden</small>
+        </div>
       </div>
 
-      <ion-button [disabled]="formRegistro.invalid" expand="full" (click)="verificarCorreo()">Continuar</ion-button>
+      <ion-button [disabled]="registerForm.invalid" expand="full" (click)="verificarCorreo()">Continuar</ion-button>
     </form>
   </div>
 </ion-content>

@@ -27,7 +27,10 @@ export class ResumenComponent implements OnInit {
     private modalCtrl: ModalController) { }
 
   ngOnInit() {
-    const { nombre, apellido, email } = this.authService.registrado;
+    
+    const nombre = 'Ricardo';
+    const apellido = 'Garcia';
+    const telefono = '6778790329';
     if (this.direccion && this.opcionEntrega === 'domicilio') {
       this.contacto = this.direccion.contacto;
       this.domicilio = this.direccion.domicilio;
@@ -47,7 +50,7 @@ export class ResumenComponent implements OnInit {
       this.contacto = {
         nombre,
         apellido,
-        telefono: email
+        telefono
       }
       this.domicilio = {
         calle: '20 de Noviembre',
