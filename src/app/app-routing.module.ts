@@ -37,6 +37,10 @@ const routes: Routes = [
   },  {
     path: 'comprar',
     loadChildren: () => import('./pages/comprar/comprar.module').then( m => m.ComprarPageModule)
+  },
+  {
+    path: 'mensajeria',
+    loadChildren: () => import('./pages/mensajeria/mensajeria.module').then( m => m.MensajeriaPageModule)
   }
 
 

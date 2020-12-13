@@ -32,6 +32,10 @@ export class MenuComponent implements OnInit {
       this.menuCtrl.close('first');
     }
   }
+  navMensajeria(){
+    this.navCtrl.navigateForward('/mensajeria');
+    this.menuCtrl.close('first');
+  }
 
   async abrirModal( nombre: string) {
 
